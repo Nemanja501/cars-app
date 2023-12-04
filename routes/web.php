@@ -14,7 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('pages.welcome');
+    $name = 'Admin';
+    $age = 22;
+    return view('pages.welcome', compact('name', 'age'));
 });
 
 Route::get('/about', function () {
