@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Cars;
+use App\Models\Car;
 use Illuminate\Http\Request;
 
 class CarsController extends Controller
@@ -12,7 +12,7 @@ class CarsController extends Controller
      */
     public function index()
     {
-        $cars = Cars::all();
+        $cars = Car::all();
         return view('pages.cars', compact('cars'));
     }
 
@@ -29,7 +29,8 @@ class CarsController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $car = Car::find($id);
+        return view('pages.car', compact('car'));
     }
 
     /**

@@ -1,3 +1,7 @@
+@extends('pages.layout.default')
+
+@section('content')
 @foreach ($cars as $car)
-    <h1>{{ $car->producer }}</h1>
+    <a href="/cars/{{ $car->id }}">{{ $car->producer }}</a>
 @endforeach
+@endsection
